@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>SNAKE VS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scanlines"></div>
+    <canvas id="gameCanvas"></canvas>
+    
+    <div style="position:absolute; left:50%; top:0; width:2px; height:100%; background:#fff; opacity:0.3; z-index:5"></div>
+
+    <div id="ui-layer">
+        <div class="hud-top" style="align-items:center; padding: 20px 50px;">
+            <div style="text-align:center; color:var(--neon-blue)">
+                <h2>P1 (WASD)</h2>
+                <div id="s1" style="font-size:60px; font-weight:900">0</div>
+            </div>
+            <div style="font-size:40px; color:var(--neon-gold)">VS</div>
+            <div style="text-align:center; color:var(--neon-pink)">
+                <h2>P2 (SETAS)</h2>
+                <div id="s2" style="font-size:60px; font-weight:900">0</div>
+            </div>
+        </div>
+
+        <div id="modal-gameover" class="modal hidden">
+            <h1 id="winnerText" style="color:var(--neon-gold); font-size:60px;">P1 WINS!</h1>
+            <button onclick="location.reload()">REMATCH</button>
+            <button onclick="location.href='index.html'">MENU</button>
+        </div>
+    </div>
+
+    <script src="game-multi.js"></script>
+</body>
+</html>

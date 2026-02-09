@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;900&display=swap');
+
+:root {
+    --bg: #050505;
+    --neon-blue: #00f3ff;
+    --neon-pink: #ff0055;
+    --neon-green: #00ff9d;
+    --neon-gold: #ffd700;
+}
+
+body {
+    margin: 0; overflow: hidden; background: var(--bg);
+    font-family: 'Rajdhani', sans-serif;
+    color: white; user-select: none;
+    height: 100vh; width: 100vw;
+    display: flex; justify-content: center; align-items: center;
+}
+
+/* Efeitos Visuais */
+.scanlines {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1));
+    background-size: 100% 4px; pointer-events: none; z-index: 99; opacity: 0.5;
+}
+
+canvas { position: absolute; top: 0; left: 0; z-index: 1; }
+
+/* UI Overlay */
+#ui-layer {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 10; pointer-events: none;
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 20px; box-sizing: border-box;
+}
+
+/* Menu Principal */
+.menu-container { text-align: center; pointer-events: auto; z-index: 20; }
+.glitch { font-size: 80px; font-weight: 900; text-shadow: 4px 4px 0 var(--neon-pink); margin: 0; }
+.subtitle { color: var(--neon-blue); letter-spacing: 10px; margin-bottom: 50px; }
+
+.mode-grid { display: flex; gap: 40px; justify-content: center; }
+.mode-card {
+    background: #111; border: 2px solid #333; padding: 40px; width: 250px;
+    border-radius: 20px; text-decoration: none; color: white; transition: 0.3s;
+    display: flex; flex-direction: column; align-items: center;
+}
+.mode-card:hover { transform: translateY(-10px); border-color: var(--neon-green); background: #1a1a1a; box-shadow: 0 0 30px rgba(0,255,157,0.2); }
+.icon { font-size: 60px; margin-bottom: 20px; }
+.mode-card h2 { margin: 0; color: var(--neon-blue); }
+
+/* HUD Solo */
+.hud-top { display: flex; justify-content: space-between; width: 100%; }
+.bars { width: 250px; }
+.bar-fill { height: 10px; background: #444; border: 1px solid #fff; margin-bottom: 5px; }
+.hp { background: var(--neon-pink); height: 100%; width: 100%; transition: width 0.2s; }
+.mp { background: var(--neon-blue); height: 100%; width: 100%; transition: width 0.2s; }
+
+.stats { display: flex; gap: 20px; background: rgba(0,0,0,0.8); padding: 10px; border-radius: 8px; }
+.stat span { font-size: 14px; color: #888; }
+.stat b { font-size: 24px; display: block; }
+
+/* Modais In-Game */
+.modal {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.95); z-index: 50;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    pointer-events: auto;
+}
+.hidden { display: none !important; }
+
+.card-grid { display: flex; gap: 20px; margin-top: 30px; }
+.game-card {
+    background: #151515; border: 2px solid #444; padding: 20px; width: 180px;
+    text-align: center; cursor: pointer; transition: 0.2s;
+}
+.game-card:hover { border-color: var(--neon-gold); transform: scale(1.05); }
+
+button {
+    padding: 15px 40px; font-size: 20px; font-family: 'Rajdhani'; font-weight: 900;
+    background: var(--neon-blue); border: none; cursor: pointer; margin-top: 20px;
+}

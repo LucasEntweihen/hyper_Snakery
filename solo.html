@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>SNAKE RPG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scanlines"></div>
+    <canvas id="gameCanvas"></canvas>
+
+    <div id="ui-layer">
+        <div class="hud-top">
+            <div class="bars">
+                <div>HP <div class="bar-fill"><div id="hp-bar" class="hp"></div></div></div>
+                <div>MANA <div class="bar-fill"><div id="mp-bar" class="mp"></div></div></div>
+            </div>
+            <div style="text-align: center;">
+                <div id="score" style="font-size: 50px; font-weight: 900;">0</div>
+                <div id="combo" style="color:var(--neon-gold)">x1.0</div>
+            </div>
+            <div class="stats">
+                <div class="stat"><span>FOR</span><b id="str" style="color:var(--neon-pink)">0</b></div>
+                <div class="stat"><span>DES</span><b id="dex" style="color:var(--neon-green)">0</b></div>
+                <div class="stat"><span>INT</span><b id="int" style="color:var(--neon-blue)">0</b></div>
+                <div class="stat" style="border-left:1px solid #555; padding-left:15px"><span>LVL</span><b id="lvl">1</b></div>
+            </div>
+        </div>
+
+        <div id="dock" style="position:absolute; bottom:20px; width:100%; display:flex; justify-content:center; gap:5px;"></div>
+
+        <div id="modal-class" class="modal">
+            <h2>ESCOLHA SUA CLASSE</h2>
+            <div id="class-list" class="card-grid"></div>
+        </div>
+
+        <div id="modal-levelup" class="modal hidden">
+            <h1 style="color:var(--neon-gold)">LEVEL UP!</h1>
+            <div id="upgrade-list" class="card-grid"></div>
+        </div>
+
+        <div id="modal-gameover" class="modal hidden">
+            <h1 style="color:var(--neon-pink)">GAME OVER</h1>
+            <button onclick="location.href='index.html'">MENU</button>
+            <button onclick="location.reload()">REINICIAR</button>
+        </div>
+    </div>
+
+    <script src="game-solo.js"></script>
+</body>
+</html>
